@@ -1,4 +1,4 @@
-C251 COMPILER V5.60.0,  SEEKFREE_IIC                                                       07/05/22  16:09:52  PAGE 1   
+C251 COMPILER V5.60.0,  SEEKFREE_IIC                                                       23/05/22  15:18:43  PAGE 1   
 
 
 C251 COMPILER V5.60.0, COMPILATION OF MODULE SEEKFREE_IIC
@@ -66,7 +66,7 @@ stmt  level    source
    52          //  @since      v1.0
    53          //  Sample usage:                               
    54          //-------------------------------------------------------------------------------------------------------
-C251 COMPILER V5.60.0,  SEEKFREE_IIC                                                       07/05/22  16:09:52  PAGE 2   
+C251 COMPILER V5.60.0,  SEEKFREE_IIC                                                       23/05/22  15:18:43  PAGE 2   
 
              -------------
    55          void  simiic_init(void)
@@ -134,7 +134,7 @@ stmt  level    source
   115   1      
   116   1              simiic_delay();
   117   1              
-C251 COMPILER V5.60.0,  SEEKFREE_IIC                                                       07/05/22  16:09:52  PAGE 3   
+C251 COMPILER V5.60.0,  SEEKFREE_IIC                                                       23/05/22  15:18:43  PAGE 3   
 
   118   1              SCL1();
   119   1          simiic_delay();
@@ -202,7 +202,7 @@ stmt  level    source
   181   1              simiic_sendack(ack_x);
   182   1              
   183   1          return c;
-C251 COMPILER V5.60.0,  SEEKFREE_IIC                                                       07/05/22  16:09:52  PAGE 4   
+C251 COMPILER V5.60.0,  SEEKFREE_IIC                                                       23/05/22  15:18:43  PAGE 4   
 
   184   1      }
   185          
@@ -270,7 +270,7 @@ stmt  level    source
   241          void simiic_read_regs(uint8 dev_add, uint8 reg, uint8 *dat_add, uint8 num, IIC_type type)
   242          {
   243   1              simiic_start();
-C251 COMPILER V5.60.0,  SEEKFREE_IIC                                                       07/05/22  16:09:52  PAGE 5   
+C251 COMPILER V5.60.0,  SEEKFREE_IIC                                                       23/05/22  15:18:43  PAGE 5   
 
   244   1          send_ch( (dev_add<<1) | 0x00);  //发送器件地址加写位
   245   1              send_ch( reg );                                 //发送从机寄存器地址

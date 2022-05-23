@@ -1,4 +1,4 @@
-C251 COMPILER V5.60.0,  main                                                               20/05/22  20:57:10  PAGE 1   
+C251 COMPILER V5.60.0,  main                                                               23/05/22  15:18:46  PAGE 1   
 
 
 C251 COMPILER V5.60.0, COMPILATION OF MODULE main
@@ -66,7 +66,7 @@ stmt  level    source
    53          int16 errorr_i = 0;
    54          int16 errorl_i =  0;
    55          int16 errorr_d = 0;
-C251 COMPILER V5.60.0,  main                                                               20/05/22  20:57:10  PAGE 2   
+C251 COMPILER V5.60.0,  main                                                               23/05/22  15:18:46  PAGE 2   
 
    56          int16 errorl_d =  0;
    57          uint8 data_to_send[20];
@@ -134,7 +134,7 @@ stmt  level    source
   118   2                      adc_data[2] = adc_once(ADC_P03, ADC_12BIT);     //采集一次ADC，精度10位
   119   2                      adc_data[3] = adc_once(ADC_P04, ADC_12BIT);     //采集一次ADC，精度10位
   120   2                      adc_data[4] = adc_once(ADC_P05, ADC_12BIT);     //采集一次ADC，精度10位
-C251 COMPILER V5.60.0,  main                                                               20/05/22  20:57:10  PAGE 3   
+C251 COMPILER V5.60.0,  main                                                               23/05/22  15:18:46  PAGE 3   
 
   121   2                      adc_data[5] = adc_once(ADC_P06, ADC_12BIT);     //采集一次ADC，精度10位
   122   2                      delay_ms(100);
