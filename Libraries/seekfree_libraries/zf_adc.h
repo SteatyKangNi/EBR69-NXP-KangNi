@@ -27,7 +27,7 @@ typedef enum
 {
     ADC_P10 = 0     , 
     ADC_P11         , 
-    ADC_P12         ,	//STC16F没有这个引脚，仅做站位使用
+    ADC_P54         ,	//吔屎啦逐飞，P54我就是要用来当ADC
 	ADC_P13         , 
     ADC_P14         , 
 	ADC_P15         , 

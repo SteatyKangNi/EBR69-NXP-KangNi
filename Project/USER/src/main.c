@@ -102,41 +102,44 @@ void main()
 //		lcd_showstr(0, 1, "pluse_r =");			lcd_showint16(8*10, 1, tempr_pluse);
 
 		//在1.14IPS屏幕上显示，需要初始化1.14寸ips屏幕，才能使用。
-		ips114_showstr(0, 0, "pluse_l =");		ips114_showint16(8*10, 0, templ_pluse);
-		ips114_showstr(0, 1, "pluse_r =");		ips114_showint16(8*10, 1, tempr_pluse);
-		ips114_showint16(0,4, adc_data[0]);
-		ips114_showint16(8*10,4, adc_data[1]);
-		ips114_showint16(0,5, adc_data[2]);
-		ips114_showint16(8*10,5, adc_data[3]);
+		// ips114_showstr(0, 0, "pluse_l =");		ips114_showint16(8*10, 0, templ_pluse);
+		// ips114_showstr(0, 1, "pluse_r =");		ips114_showint16(8*10, 1, tempr_pluse);
+		ips114_showint16(0,1, adc_data[0]);
+		ips114_showint16(8*10,1, adc_data[1]);
+		ips114_showint16(0,2, adc_data[2]);
+		ips114_showint16(8*10,2, adc_data[3]);
+		ips114_showint16(0,3, adc_data[4]);
+		ips114_showint16(8*10,3, adc_data[5]);
 		
 		//在OLED屏幕上显示，需要初始化OLED屏幕，才能使用。
 //		oled_p6x8str_spi(0, 0, "pluse_l =");	oled_int16_spi(8*10, 0, templ_pluse);
 //		oled_p6x8str_spi(0, 1, "pluse_r =");	oled_int16_spi(8*10, 1, tempr_pluse);、
 		//延时100ms
-		adc_data[0] = adc_once(ADC_P01, ADC_12BIT);	//采集一次ADC，精度10位
-		adc_data[1] = adc_once(ADC_P02, ADC_12BIT);	//采集一次ADC，精度10位
-		adc_data[2] = adc_once(ADC_P03, ADC_12BIT);	//采集一次ADC，精度10位
-		adc_data[3] = adc_once(ADC_P04, ADC_12BIT);	//采集一次ADC，精度10位
-		adc_data[4] = adc_once(ADC_P05, ADC_12BIT);	//采集一次ADC，精度10位
-		adc_data[5] = adc_once(ADC_P06, ADC_12BIT);	//采集一次ADC，精度10位
+		adc_data[0] = adc_once(ADC_P10, ADC_10BIT)/82;	//采集一次ADC，精度10位
+		adc_data[1] = adc_once(ADC_P11, ADC_10BIT)/82;	//采集一次ADC，精度10位
+		adc_data[2] = adc_once(ADC_P54, ADC_10BIT)/82;	//采集一次ADC，精度10位
+		adc_data[3] = adc_once(ADC_P13, ADC_10BIT)/82;	//采集一次ADC，精度10位
+		adc_data[4] = adc_once(ADC_P14, ADC_10BIT)/82;	//采集一次ADC，精度10位
+		adc_data[5] = adc_once(ADC_P15, ADC_10BIT)/82;	//采集一次ADC，精度10位
 		delay_ms(100);
-		errorr_last = errorr;
-        errorl_last =  errorl;
-		errorl = spd_set - templ_pluse;
-		errorr = spd_set - tempr_pluse;
-		errorl_i = errorl_i + errorl;
-		errorr_i = errorr_i + errorr;
-		errorr_d = errorr_last - errorr;
-		errorl_d = errorl_last - errorl;
-		dutyl = dutyl + 0.02*errorl + 0.001*errorl_i + 0.01*errorl_d;
-		dutyr = dutyr + 0.02*errorr + 0.001*errorr_i + 0.01*errorr_d;
-		DIR_1 = 0;
-		pwm_duty(PWM_2, dutyl);
-		DIR_2 = 0;
-		pwm_duty(PWM_1, dutyr);
-		ips114_showint16(0, 2, dutyl);
-		ips114_showint16(0, 3, dutyr);
-	    printf("%d,%d\n",templ_pluse,tempr_pluse);
+		
+		// errorr_last = errorr;
+        // errorl_last =  errorl;
+		// errorl = spd_set - templ_pluse;
+		// errorr = spd_set - tempr_pluse;
+		// errorl_i = errorl_i + errorl;
+		// errorr_i = errorr_i + errorr;
+		// errorr_d = errorr_last - errorr;
+		// errorl_d = errorl_last - errorl;
+		// dutyl = dutyl + 0.02*errorl + 0.001*errorl_i + 0.01*errorl_d;
+		// dutyr = dutyr + 0.02*errorr + 0.001*errorr_i + 0.01*errorr_d;
+		// DIR_1 = 0;
+		// pwm_duty(PWM_2, dutyl);
+		// DIR_2 = 0;
+		// pwm_duty(PWM_1, dutyr);
+		// ips114_showint16(0, 2, dutyl);
+		// ips114_showint16(0, 3, dutyr);
+	    // printf("%d,%d\n",templ_pluse,tempr_pluse);
 	}
 }
                       
